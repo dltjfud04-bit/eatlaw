@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>법률상담 AI 챗봇</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"맑은 고딕",sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.container{
+    width:700px;
+    margin:30px auto;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#1d3557;
+}
+
+#chat{
+    background:white;
+    border-radius:15px;
+    height:500px;
+    overflow-y:auto;
+    padding:20px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.bot{
+    background:#eaf4ff;
+    padding:12px;
+    border-radius:10px;
+    margin:10px 0;
+    width:fit-content;
+    max-width:85%;
+    line-height:1.6;
+}
+
+.user{
+    background:#d4f8d4;
+    padding:12px;
+    border-radius:10px;
+    margin:10px 0;
+    margin-left:auto;
+    width:fit-content;
+    max-width:85%;
+    line-height:1.6;
+}
+
+.inputBox{
+    display:flex;
+    margin-top:15px;
+}
+
+#userInput{
+    flex:1;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    width:100px;
+    margin-left:10px;
+    border:none;
+    border-radius:10px;
+    background:#1d3557;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#457b9d;
+}
+
+.info{
+    margin-top:15px;
+    text-align:center;
+    color:gray;
+    font-size:14px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚖️ 법률상담 AI 챗봇</h1>
+
+<div id="chat">
+
+<div class="bot">
+안녕하세요.<br><br>
+
+법률 관련 질문을 입력해 주세요.<br><br>
+
+예시
+<ul style="margin-left:20px;margin-top:10px;">
+<li>사기죄</li>
+<li>상간자 소송</li>
+<li>음주운전</li>
+<li>재판 절차</li>
+<li>최저임금</li>
+<li>주휴수당</li>
+<li>해고</li>
+<li>알바 급여</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="inputBox">
+<input
+type="text"
+id="userInput"
+placeholder="질문을 입력하세요."
+onkeypress="if(event.key==='Enter') sendMessage()">
+
+<button onclick="sendMessage()">전송</button>
+</div>
+
+<div class="info">
+키워드만 입력해도 관련 답변을 제공합니다.
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
